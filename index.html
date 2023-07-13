@@ -21,7 +21,7 @@
         <h1>Weather</h1>
         <form class="search-form" id="search-form">
           <div class="row">
-            <div class="col-lg-9 col-sm-9">
+            <div class="col-lg-6 col-sm-12">
               <input
                 type="search"
                 placeholder="Type a city.."
@@ -31,12 +31,17 @@
                 class="form-control shadow-sm"
               />
             </div>
-            <div class="col-lg-3 col-sm-3">
+            <div class="col-lg-3 col-sm-6">
               <input
                 type="submit"
                 value="Search"
                 class="form-control btn btn-primary shadow-sm"
               />
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <button class="btn btn-success w-100" id="current-location">
+                Current Location
+              </button>
             </div>
           </div>
         </form>
