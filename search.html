@@ -68,42 +68,58 @@
         </div>
       </nav>
       <div class="weather-app-wrapper">
-        <h1>Weather</h1>
-
-        <div class="weather-info">
+        <h1>Search weather for any city</h1>
+        <form class="search-form" id="search-form">
           <div class="row">
             <div class="col-lg-6 col-sm-12">
-              <h2 id="city"></h2>
-              <ul>
-                <li id="date"></li>
-              </ul>
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
             </div>
-            <div class="col-lg-6 col-sm-12">
-              <ul>
-                <li id="weather-type"></li>
-                <li><img src="" alt="" id="weather-icon" /></li>
-                <div>
-                  <span class="temperature" id="temperature"></span
-                  ><span class="units"> °C </span>
-                </div>
-              </ul>
+            <div class="col-lg-3 col-sm-6">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary"
+              />
+            </div>
+            <div class="col-lg-3 col-sm-6 d-block">
+              <input
+                class="form-control btn btn-primary"
+                id="current-location"
+                type="button"
+                value="Current Location"
+              />
             </div>
           </div>
+        </form>
+
+        <div class="weather-info">
+          <h2 id="city"></h2>
+          <ul>
+            <li id="weather-type"></li>
+            <li><img src="" alt="" id="weather-icon" /></li>
+            <div>
+              <span class="temperature" id="temperature"></span
+              ><span class="units"> °C </span>
+            </div>
+          </ul>
         </div>
         <div class="row">
-          <div class="col-lg-6 col-sm-12">
-            <li>Humidity: <span class="imp-data" id="humidity"></span></li>
-            <li>Wind: <span class="imp-data" id="wind"></span></li>
+          <div class="col-lg-6 col-md-6 col-sm-6 details">
+            <p>Humidity: <span class="imp-data" id="humidity"></span></p>
           </div>
-          <div class="col-lg-6 col-sm-12">
-            <ul>
-              <li>Sunrise: <span class="imp-data" id="sunrise"></span></li>
-              <li>Sunset: <span class="imp-data" id="sunset"></span></li>
-            </ul>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <p>Wind: <span class="imp-data" id="wind"></span></p>
           </div>
         </div>
       </div>
     </div>
-    <script src="src/index.js"></script>
+    <script src="/src/search.js"></script>
   </body>
 </html>
