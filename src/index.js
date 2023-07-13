@@ -8,6 +8,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  let theDate = date.getDate();
 
   let dayIndex = date.getDay();
   let days = [
@@ -21,7 +22,38 @@ function formatDate(timestamp) {
   ];
   let day = days[dayIndex];
 
-  return `${day} ${hours}:${minutes}`;
+  let monthIndex = date.getMonth();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[monthIndex];
+
+  return `${day}, ${month} ${theDate}, ${hours}:${minutes}`;
+}
+
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
@@ -52,12 +84,12 @@ function displayForecast(response) {
         />
         <div class="weather-forecast-temperatures">
        
-          <span class="weather-forecast-temperature-max"> ${Math.round(
+          <div class="weather-forecast-temperature-max"> H: ${Math.round(
             forecastDay.temp.max
-          )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
+          )}° </div>
+          <div class="weather-forecast-temperature-min"> L: ${Math.round(
             forecastDay.temp.min
-          )}° </span>
+          )}° </div>
         </div>
       </div>
   `;
@@ -81,6 +113,8 @@ function displayWeather(response) {
   tempElement.innerHTML = temperature;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
+  sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
+  sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   weatherIconElement.setAttribute(
     "src",
@@ -111,5 +145,7 @@ let tempElement = document.querySelector("#temperature");
 let windElement = document.querySelector("#wind");
 let humidityElement = document.querySelector("#humidity");
 let weatherIconElement = document.querySelector("#weather-icon");
+let sunriseElement = document.querySelector("#sunrise");
+let sunsetElement = document.querySelector("#sunset");
 
 searchCity("Addis Ababa");

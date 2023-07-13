@@ -12,57 +12,69 @@
     />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <title>Weather App</title>
+    <title>Weather Web App</title>
   </head>
 
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
         <h1>Weather</h1>
-        <div class="weather-app">
-          <form class="search-form" id="search-form">
-            <div class="row">
-              <div class="col-9">
-                <input
-                  type="search"
-                  placeholder="Type a city.."
-                  autofocus="on"
-                  autocomplete="off"
-                  id="city-input"
-                  class="form-control shadow-sm"
-                />
-              </div>
-              <div class="col-3">
-                <input
-                  type="submit"
-                  value="Search"
-                  class="form-control btn btn-primary shadow-sm"
-                />
-              </div>
-            </div>
-          </form>
-          <h1 id="city"></h1>
+        <form class="search-form" id="search-form">
           <div class="row">
-            <div class="col-8">
+            <div class="col-lg-9 col-sm-9">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-lg-3 col-sm-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+              />
+            </div>
+          </div>
+        </form>
+
+        <div class="weather-info">
+          <div class="row">
+            <div class="col-lg-6 col-sm-12">
+              <h2 id="city"></h2>
               <ul>
                 <li id="date"></li>
-                <li id="weather-type"></li>
-                <li>Humidity: <span class="imp-data" id="humidity"></span></li>
-                <li>Wind: <span class="imp-data" id="wind"></span></li>
               </ul>
             </div>
-            <div class="col-4">
-              <div class="d-flex weather-temperature">
-                <img src="" alt="" id="weather-icon" class="float-left" />
+            <div class="col-lg-6 col-sm-12">
+              <ul>
+                <li id="weather-type"></li>
+                <li><img src="" alt="" id="weather-icon" /></li>
                 <div>
                   <span class="temperature" id="temperature"></span
                   ><span class="units"> °C </span>
                 </div>
-              </div>
+              </ul>
             </div>
           </div>
-          <div class="weather-forecast" id="forecast"></div>
-      
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-sm-12">
+            <li>Humidity: <span class="imp-data" id="humidity"></span></li>
+            <li>Wind: <span class="imp-data" id="wind"></span></li>
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <ul>
+              <li>Sunrise: <span class="imp-data" id="sunrise"></span></li>
+              <li>Sunset: <span class="imp-data" id="sunset"></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="weather-forecast" id="forecast"></div>
+      </div>
     </div>
     <script src="src/index.js"></script>
   </body>
