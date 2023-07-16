@@ -1,7 +1,7 @@
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   weatherType.innerHTML = response.data.weather[0].description;
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   tempElement.innerHTML = temperature;
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;

@@ -116,7 +116,7 @@ function getForecast(coordinates) {
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   weatherType.innerHTML = response.data.weather[0].description;
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   tempElement.innerHTML = temperature;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
