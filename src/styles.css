@@ -15,9 +15,13 @@ p {
   font-size: 24px;
   line-height: 1.5;
 }
+a {
+  font-size: 18px;
+  line-height: 1;
+}
 
 ul {
-  margin: 0;
+  margin: 10;
   padding: 0;
 }
 
@@ -101,6 +105,9 @@ li {
 }
 .details {
   text-align: right;
+}
+.search-form {
+  padding: 5px;
 }
 @media (max-width < 576px) {
   .details {
