@@ -39,6 +39,11 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item active">
+                <a class="nav-link" href="/index.html" title="Weather forecast"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item active">
                 <a
                   class="nav-link"
                   href="/forecast.html"
@@ -54,32 +59,33 @@
       <h1>Weather Forecast</h1>
       <form class="search-form" id="search-form">
         <div class="row">
-          <div class="col-lg-6 col-sm-12">
+          <div class="col-lg-6 col-sm-12 search">
             <input
               type="search"
-              placeholder="Type a city.."
+              placeholder="Please type a city.."
               autofocus="on"
               autocomplete="off"
               id="city-input"
-              class="form-control shadow-sm"
+              class="form-control"
             />
           </div>
-          <div class="col-lg-3 col-sm-6">
+          <div class="col-lg-3 col-sm-6 search">
             <input
               type="submit"
               value="Search"
               title="Search weather for a specific city"
-              class="form-control btn btn-primary shadow-sm"
+              class="form-control btn btn-primary"
             />
           </div>
-          <div class="col-lg-3 col-sm-6">
-            <button
-              class="btn btn-success w-100"
+
+          <div class="col-lg-3 col-sm-6 d-block search">
+            <input
+              class="form-control btn btn-primary weather-info"
               id="current-location"
-              title="cDisplay weather for current location"
-            >
-              Current Location
-            </button>
+              type="button"
+              title="Display weather for current location"
+              value="Current City"
+            />
           </div>
         </div>
       </form>
