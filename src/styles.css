@@ -53,7 +53,6 @@ li {
 }
 .weather-info {
   display: block;
-  padding: 10px;
   margin: auto;
   text-align: center;
 }
@@ -103,15 +102,9 @@ li {
   padding: 10px;
   min-height: auto;
 }
-.details {
-  text-align: right;
-}
 .search-form {
   padding: 5px;
 }
-@media (max-width < 576px) {
-  .details {
-    display: block;
-    text-align: left;
-  }
+.search {
+  padding: 3px;
 }

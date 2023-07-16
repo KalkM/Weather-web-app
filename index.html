@@ -41,14 +41,6 @@
               <li class="nav-item">
                 <a
                   class="nav-link"
-                  href="/search.html"
-                  title="Search weather of any city"
-                  >Search</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
                   href="/forecast.html"
                   title="Weather forecast"
                   >Forecast</a
@@ -59,42 +51,63 @@
         </div>
       </nav>
       <div class="weather-app-wrapper">
-        <h1>Weather</h1>
+        <h1>
+          Do you want to see the weather for the current city or other city?
+        </h1>
+
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 search">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control"
+              />
+            </div>
+            <div class="col-lg-3 col-sm-6 search">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary"
+              />
+            </div>
+
+            <div class="col-lg-3 col-sm-6 d-block search">
+              <input
+                class="form-control btn btn-primary weather-info"
+                id="current-location"
+                type="button"
+                value="Current City"
+              />
+            </div>
+          </div>
+        </form>
 
         <div class="weather-info">
-          <div class="row">
-            <div class="col-lg-6 col-sm-12">
-              <h2 id="city"></h2>
-              <ul>
-                <li id="date"></li>
-              </ul>
+          <h2 id="city"></h2>
+          <ul>
+            <li id="weather-type"></li>
+            <li><img src="" alt="" id="weather-icon" /></li>
+            <div>
+              <span class="temperature" id="temperature"></span
+              ><span class="units"> °C </span>
             </div>
-            <div class="col-lg-6 col-sm-12">
-              <ul>
-                <li id="weather-type"></li>
-                <li><img src="" alt="" id="weather-icon" /></li>
-                <div>
-                  <span class="temperature" id="temperature"></span
-                  ><span class="units"> °C </span>
-                </div>
-              </ul>
-            </div>
-          </div>
+          </ul>
         </div>
         <div class="row">
-          <div class="col-lg-6 col-sm-12">
-            <li>Humidity: <span class="imp-data" id="humidity"></span></li>
-            <li>Wind: <span class="imp-data" id="wind"></span></li>
+          <div class="col-lg-4 col-md-6 col-sm-6 weather-info">
+            <p>Humidity: <span class="imp-data" id="humidity"></span></p>
           </div>
-          <div class="col-lg-6 col-sm-12">
-            <ul>
-              <li>Sunrise: <span class="imp-data" id="sunrise"></span></li>
-              <li>Sunset: <span class="imp-data" id="sunset"></span></li>
-            </ul>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 weather-info">
+            <p>Wind: <span class="imp-data" id="wind"></span></p>
           </div>
         </div>
       </div>
     </div>
-    <script src="src/index.js"></script>
+    <script src="/src/index.js"></script>
   </body>
 </html>

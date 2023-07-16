@@ -39,7 +39,7 @@ function formatDate(timestamp) {
   ];
   let month = months[monthIndex];
 
-  return `${day}, ${month} ${theDate}, ${hours}:${minutes}`;
+  return `${day}, ${month} ${theDate}`;
 }
 
 function formatTime(timestamp) {
@@ -69,12 +69,13 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 3) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
-      <div class="col-lg-4 col-md-4 col-sm-4 weather-forecast-data">
+      <div class="col-lg-2 col-md-4 col-sm-4 weather-forecast-data">
         <div class="weather-forecast-date ">${formatDay(forecastDay.dt)}</div>
+        
         <img
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
@@ -90,6 +91,12 @@ function displayForecast(response) {
           <div class="weather-forecast-temperature-min"> L: ${Math.round(
             forecastDay.temp.min
           )}° </div>
+          <div class="weather-forecast-temperature-max"> Sunrise: ${formatTime(
+            forecastDay.sunrise * 1000
+          )} </div>
+          <div class="weather-forecast-temperature-max"> sunset: ${formatTime(
+            forecastDay.sunset * 1000
+          )} </div>
         </div>
       </div>
   `;
