@@ -24,7 +24,7 @@ Week 2 - making the pages responsive.
 Week 3 - connect  with the open weather api.
 Week 4 - finalize the project and presentation.
    
-
+website https://neon-sprite-7fc7bc.netlify.app
 
 
 
