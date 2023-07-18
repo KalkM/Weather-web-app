@@ -33,6 +33,11 @@ li {
   line-height: 1;
   text-align: center;
 }
+footer {
+  display: block;
+  margin: 0 Auto;
+  text-align: center;
+}
 .weather-app-wrapper {
   margin: 20px auto;
   max-width: 100%;
