@@ -66,7 +66,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.getElementById("forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -108,7 +108,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "a5acb752426cd8188485c35694980e3a";
+  let apiKey = "c119ffef35b7245a5e03b6e5724ae961";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -128,18 +128,18 @@ function displayWeather(response) {
   getForecast(response.data.coord);
 }
 function searchCity(city) {
-  let apiKey = "a5acb752426cd8188485c35694980e3a";
+  let apiKey = "f18833d4f810e7c8cfb463dcc107c093";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
 function search(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
+  let city = document.getElementById("city-input").value;
   searchCity(city);
 }
 function searchLocation(position) {
-  let apiKey = "c119ffef35b7245a5e03b6e5724ae961";
+  let apiKey = "f18833d4f810e7c8cfb463dcc107c093";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayWeather);
@@ -150,10 +150,10 @@ function currentCity(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-let searchForm = document.querySelector("#search-form");
+let searchForm = document.getElementById("search-form");
 searchForm.addEventListener("submit", search);
 
-let currentCityForm = document.querySelector("#current-location");
+let currentCityForm = document.getElementById("current-location");
 currentCityForm.addEventListener("click", currentCity);
 
 let cityElement = document.getElementById("city");

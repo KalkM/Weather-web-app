@@ -35,11 +35,11 @@ li {
 }
 footer {
   display: block;
-  margin: 0 Auto;
+  margin: 10px Auto;
   text-align: center;
-  background-color: #333333;
-  color: white;
+  background-color: white;
 }
+
 .weather-app-wrapper {
   margin: 20px auto;
   max-width: 100%;
@@ -68,6 +68,14 @@ footer {
   margin: auto;
   text-align: center;
 }
+.units .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
 .temperature {
   font-size: 64px;
   font-weight: 400;
@@ -79,6 +87,14 @@ footer {
 .units {
   position: relative;
   top: -34px;
+  text-decoration: none;
+}
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
   text-decoration: none;
 }
 
