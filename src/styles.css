@@ -37,6 +37,8 @@ footer {
   display: block;
   margin: 0 Auto;
   text-align: center;
+  background-color: #333333;
+  color: white;
 }
 .weather-app-wrapper {
   margin: 20px auto;
