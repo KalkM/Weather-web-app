@@ -17,6 +17,7 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
+
     <title>Weather Web App</title>
   </head>
 
@@ -59,20 +60,40 @@
         </div>
       </nav>
       <div class="weather-app-wrapper">
-        <div class="row">
-          <div class="col-lg-8 col-sm-6">
-            <h1>Weather</h1>
+        <h1>Weather</h1>
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 search">
+              <input
+                type="search"
+                placeholder="Please type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control"
+              />
+            </div>
+            <div class="col-lg-3 col-sm-6 search">
+              <input
+                type="submit"
+                value="Search"
+                title="Search weather for a specific city"
+                class="form-control btn btn-primary"
+              />
+            </div>
+
+            <div class="col-lg-3 col-sm-6 d-block search">
+              <input
+                class="form-control btn btn-primary weather-info"
+                id="current-location"
+                type="button"
+                title="Display weather for current location"
+                value="Current City"
+              />
+            </div>
           </div>
-          <div class="col-lg-4 col-sm-6 d-block search">
-            <input
-              class="btn-dark weather-info"
-              id="current-location"
-              type="button"
-              title="Display weather for current location"
-              value="Get Current Location"
-            />
-          </div>
-        </div>
+        </form>
+
         <div class="weather-info">
           <h2 id="city"></h2>
           <ul>
@@ -91,9 +112,7 @@
         </div>
       </div>
     </div>
-    <div>
-      <footer>developed by Kalkidan Mulugeta Diro</footer>
-    </div>
-    <script src="/src/index.js"></script>
   </body>
+  <footer>developed by Kalkidan Mulugeta Diro</footer>
+  <script src="/src/search.js"></script>
 </html>
