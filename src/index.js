@@ -1,10 +1,13 @@
 function displayWeather(response) {
+  let timeZone = response.data.timezone / 3600;
   weatherType.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   tempElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   celsiusTemperature = response.data.main.temp;
+  if (timeZone < 0) timeZoneElement.innerHTML = `Timezone : GMT ${timeZone}`;
+  else timeZoneElement.innerHTML = `Timezone : GMT + ${timeZone}`;
   weatherIconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -73,5 +76,6 @@ let tempElement = document.getElementById("temperature");
 let weatherIconElement = document.getElementById("weather-icon");
 let windElement = document.getElementById("wind");
 let humidityElement = document.getElementById("humidity");
+let timeZoneElement = document.getElementById("time-zone");
 
 searchCity("Addis Ababa");
