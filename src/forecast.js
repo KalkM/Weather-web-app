@@ -119,7 +119,7 @@ function displayWeather(response) {
   weatherType.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   tempElement.innerHTML = temperature;
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate((response.data.dt + timeZone) * 1000);
   if (timeZone < 0) timeZoneElement.innerHTML = `Timezone : GMT ${timeZone}`;
   else timeZoneElement.innerHTML = `Timezone : GMT + ${timeZone}`;
 
