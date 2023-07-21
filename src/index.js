@@ -6,8 +6,11 @@ function displayWeather(response) {
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   celsiusTemperature = response.data.main.temp;
-  if (timeZone < 0) timeZoneElement.innerHTML = `GMT ${timeZone}`;
-  else timeZoneElement.innerHTML = `GMT + ${timeZone}`;
+  dateElement.innerHTML = formatDate(
+    (response.data.dt + response.data.timezone - 10800) * 1000
+  );
+  if (timeZone < 0) timeZoneElement.innerHTML = `Timezone : GMT ${timeZone}`;
+  else timeZoneElement.innerHTML = `Timezone : GMT + ${timeZone}`;
   weatherIconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -71,6 +74,7 @@ let celsiusLink = document.getElementById("celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let cityElement = document.getElementById("city");
+let dateElement = document.getElementById("date");
 let weatherType = document.getElementById("weather-type");
 let tempElement = document.getElementById("temperature");
 let weatherIconElement = document.getElementById("weather-icon");
