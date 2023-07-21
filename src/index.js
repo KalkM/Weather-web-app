@@ -6,8 +6,8 @@ function displayWeather(response) {
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   celsiusTemperature = response.data.main.temp;
-  if (timeZone < 0) timeZoneElement.innerHTML = `Timezone : GMT ${timeZone}`;
-  else timeZoneElement.innerHTML = `Timezone : GMT + ${timeZone}`;
+  if (timeZone < 0) timeZoneElement.innerHTML = `GMT ${timeZone}`;
+  else timeZoneElement.innerHTML = `GMT + ${timeZone}`;
   weatherIconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
