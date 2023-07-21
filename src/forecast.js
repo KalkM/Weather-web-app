@@ -119,6 +119,7 @@ function displayWeather(response) {
   cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   tempElement.innerHTML = temperature;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  timeZoneElement.innerHTML = `Timezone : GMT ${data.timezone / 3600}`;
 
   weatherIconElement.setAttribute(
     "src",
@@ -158,6 +159,7 @@ currentCityForm.addEventListener("click", currentCity);
 
 let cityElement = document.getElementById("city");
 let dateElement = document.getElementById("date");
+let timeZoneElement = document.getElementById("time-zone");
 let weatherType = document.getElementById("weather-type");
 let tempElement = document.getElementById("temperature");
 let weatherIconElement = document.getElementById("weather-icon");
