@@ -92,10 +92,10 @@ function displayForecast(response) {
             forecastDay.temp.min
           )}° </div>
           <div class="weather-forecast-temperature-max"> Sunrise: ${formatTime(
-            (forecastDay.sunrise + response.data.timezone - 10800) * 1000
+            (forecastDay.sunrise + response.data.timezone_offset - 10800) * 1000
           )} </div>
           <div class="weather-forecast-temperature-max"> sunset: ${formatTime(
-            (forecastDay.sunset + response.data.timezone - 10800) * 1000
+            (forecastDay.sunset + response.data.timezone_offset - 10800) * 1000
           )} </div>
         </div>
       </div>
