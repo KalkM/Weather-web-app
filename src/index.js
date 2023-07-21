@@ -1,3 +1,47 @@
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let theDate = date.getDate();
+
+  let dayIndex = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[dayIndex];
+
+  let monthIndex = date.getMonth();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[monthIndex];
+
+  return `${day}, ${month} ${theDate} ${hours}:${minutes}`;
+}
+
 function displayWeather(response) {
   let timeZone = response.data.timezone / 3600;
   weatherType.innerHTML = response.data.weather[0].description;
