@@ -39,7 +39,7 @@ function formatDate(timestamp) {
   ];
   let month = months[monthIndex];
 
-  return `${day}, ${month} ${theDate}`;
+  return `${day}, ${month} ${theDate} ${hours}:${minutes}`;
 }
 
 function formatTime(timestamp) {
@@ -115,11 +115,13 @@ function getForecast(coordinates) {
 
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
+  let timeZone = response.data.timezone / 3600;
   weatherType.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   tempElement.innerHTML = temperature;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  timeZoneElement.innerHTML = `Timezone : GMT ${response.data.timezone / 3600}`;
+  if (timeZone < 0) timeZoneElement.innerHTML = `Timezone : GMT ${timeZone}`;
+  else timeZoneElement.innerHTML = `Timezone : GMT + ${timeZone}`;
 
   weatherIconElement.setAttribute(
     "src",
